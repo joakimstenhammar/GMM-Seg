@@ -2,14 +2,16 @@
 
 ## Overview
 
-This repository implements a **Gaussian Mixture Model (GMM)–based framework for the segmentation of particle trajectories** using stepwise displacement statistics. The method infers discrete diffusive states from single-particle tracking data **without requiring labeled training data or predefined state boundaries**.
+This repository implements a **Gaussian Mixture Model (GMM)–based framework for the segmentation of particle trajectories** using stepwise displacement statistics. The method performs a **statistical segmentation of displacement time series into distinct regimes**.
+
+The framework is fully unsupervised and does **not** rely on labeled training data or predefined segmentation thresholds. Any physical interpretation of the resulting segments (e.g., as diffusive states) must be performed a posteriori.
 
 The project supports:
 
-1. **Synthetic trajectory generation with known ground truth**, enabling quantitative validation.
-2. **Segmentation of experimental trajectory data**, where no ground truth is available.
+1. **Synthetic trajectory generation with known ground truth**, enabling quantitative benchmarking.
+2. **Segmentation of experimental trajectory data**, where no ground truth is assumed.
 
-A central feature of the approach is the **automatic optimization of a Gaussian temporal filter**, selected by minimizing the statistical overlap between GMM components.
+A central feature of the approach is the **automatic optimization of a Gaussian temporal filter**, selected by minimizing overlap between mixture components.
 
 ---
 
@@ -24,16 +26,19 @@ This framework addresses the problem by:
 - Optimizing temporal smoothing to maximize state separability
 - Producing a **discrete state barcode** for each trajectory
 
-The method is fully unsupervised and does not rely on external annotations.
-
 ---
 
 ## Repository Structure
 
-data_gen.py                 # Synthetic two-state diffusion simulator
-GMM_Seg_synthetic.py        # GMM segmentation and accuracy evaluation on synthetic data
-GMM_seg_exp.py              # GMM segmentation of experimental trajectory data
-raw-data/                   # Auto-generated synthetic datasets
+- Synthetic two-state diffusion simulator: data_gen.py
+
+- GMM segmentation and accuracy evaluation on synthetic data: GMM_Seg_synthetic.py
+
+- GMM segmentation of experimental trajectory data: GMM_seg_exp.py
+
+- raw-data/: Generated synthetic datasets
+
+---
 
 ## Scripts Description
 
