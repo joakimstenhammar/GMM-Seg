@@ -30,11 +30,10 @@ The method is fully unsupervised and does not rely on external annotations.
 
 ## Repository Structure
 
-.
-├── data_gen.py                 # Synthetic two-state diffusion simulator
-├── GMM_Seg_synthetic.py        # GMM segmentation and accuracy evaluation on synthetic data
-├── GMM_seg_exp.py              # GMM segmentation of experimental trajectory data
-└── raw-data/                   # Auto-generated synthetic datasets
+data_gen.py                 # Synthetic two-state diffusion simulator
+GMM_Seg_synthetic.py        # GMM segmentation and accuracy evaluation on synthetic data
+GMM_seg_exp.py              # GMM segmentation of experimental trajectory data
+raw-data/                   # Auto-generated synthetic datasets
 
 ## Scripts Description
 
